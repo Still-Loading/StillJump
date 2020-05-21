@@ -13,14 +13,13 @@ public class Player : MonoBehaviour
     private Rigidbody2D m_Rigidbody2D;
     private BoxCollider2D boxCollider2D;
 
-    private Vector2 moveVelocity;
-
     /// <summary>
     /// Laufgeschwindigkeit
     /// </summary>
     public float speed;
+    public float jumpVelocity;
 
- 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,14 +30,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (IsGrounded() && Input.GetAxis("Jump") > 0)
+        if (IsGrounded() && (Input.GetAxis("Jump") > 0 || Input.GetAxis("Vertical") > 0))
         {
-            float jumpVelocity = 2f;
             m_Rigidbody2D.velocity = Vector2.up * jumpVelocity;
         }
-
-          //  Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-          //  moveVelocity = moveInput.normalized * speed;
     }
 
     private void FixedUpdate()
@@ -64,8 +59,8 @@ public class Player : MonoBehaviour
 
     private bool IsGrounded()
     {
-        float extraHeightText = 0.1f;
-        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, boxCollider2D.bounds.extents.y + extraHeightText, platformLayerMask);
+        float extraHeightText = 0.01f;
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, extraHeightText, platformLayerMask);
 
         return raycastHit.collider != null;
     }
