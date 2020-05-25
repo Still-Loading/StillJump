@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -19,12 +20,16 @@ public class Player : MonoBehaviour
     public float speed;
     public float jumpVelocity;
 
-
+    private int collectableCounter;
+    public Text score;
+    
     // Start is called before the first frame update
     void Start()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
+
+        collectableCounter = 0;
     }
 
     // Update is called once per frame
@@ -33,6 +38,16 @@ public class Player : MonoBehaviour
         if (IsGrounded() && (Input.GetAxis("Jump") > 0 || Input.GetAxis("Vertical") > 0))
         {
             m_Rigidbody2D.velocity = Vector2.up * jumpVelocity;
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Collectable"))
+        {
+            Destroy(collision.gameObject);
+            collectableCounter++;
+            score.text = "Score: " + collectableCounter;
         }
     }
 
