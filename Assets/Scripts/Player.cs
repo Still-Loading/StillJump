@@ -5,14 +5,10 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-
-    [SerializeField] private LayerMask platformLayerMask;
-
     /// <summary>
     /// Zeiger auf Animation
     /// </summary>
     private Rigidbody2D m_Rigidbody2D;
-    private BoxCollider2D boxCollider2D;
 
     /// <summary>
     /// Laufgeschwindigkeit
@@ -27,7 +23,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
-        boxCollider2D = GetComponent<BoxCollider2D>();
 
         collectableCounter = 0;
     }
@@ -74,10 +69,7 @@ public class Player : MonoBehaviour
 
     private bool IsGrounded()
     {
-        float extraHeightText = 0.01f;
-        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, extraHeightText, platformLayerMask);
-
-        return raycastHit.collider != null;
+        return transform.Find("GroundCheck").GetComponent<GroundCheck>().isGrounded;
     }
 
 }
