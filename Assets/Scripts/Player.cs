@@ -47,8 +47,8 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("CheckPoint"))
         {
             Debug.Log("Ich bin am CheckPoint");
-       //     SpriteRenderer sprite = collision.gameObject.GetComponentInChildren<SpriteRenderer>();
-         //   sprite.enabled = true;
+            SpriteRenderer sprite = collision.gameObject.GetComponentInChildren<SpriteRenderer>();
+            sprite.enabled = true;
         }
     }
 
