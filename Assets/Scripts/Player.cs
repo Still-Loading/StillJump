@@ -44,6 +44,12 @@ public class Player : MonoBehaviour
             collectableCounter++;
             score.text = "Score: " + collectableCounter;
         }
+        if (collision.CompareTag("CheckPoint"))
+        {
+            Debug.Log("Ich bin am CheckPoint");
+       //     SpriteRenderer sprite = collision.gameObject.GetComponentInChildren<SpriteRenderer>();
+         //   sprite.enabled = true;
+        }
     }
 
     private void FixedUpdate()
