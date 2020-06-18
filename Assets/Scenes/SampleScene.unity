@@ -8119,7 +8119,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0.026167428, y: -0.009295586, z: 0.00024333988, w: 0.99961436}
-  m_LocalPosition: {x: -4.889, y: -2.811, z: -10}
+  m_LocalPosition: {x: -4.889, y: -2.51, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1423128886}
@@ -9122,7 +9122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423128885}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.12, y: -0.32, z: 10}
+  m_LocalPosition: {x: -0.142, y: -0.304, z: 10}
   m_LocalScale: {x: 1.389482, y: 1.389482, z: 1.389482}
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -9299,6 +9299,7 @@ GameObject:
   - component: {fileID: 1540647341}
   - component: {fileID: 1540647338}
   - component: {fileID: 1540647342}
+  - component: {fileID: 1540647343}
   m_Layer: 0
   m_Name: Loki_player
   m_TagString: Player
@@ -9319,7 +9320,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.16188395, y: 0.44486547}
+  m_Offset: {x: -0.3456962, y: -0.31124353}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9330,7 +9331,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.6163886, y: 7.6866965}
+  m_Size: {x: 3.9866247, y: 9.198915}
   m_EdgeRadius: 0
 --- !u!212 &1540647339
 SpriteRenderer:
@@ -9371,7 +9372,7 @@ SpriteRenderer:
   m_SortingLayerID: -1297246105
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c3c73b31e576f2f4e953c213ebe635ee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 841a6c6cf3fd0da4096baa402850d061, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9390,7 +9391,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1540647337}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.075, y: -3.335, z: 0}
+  m_LocalPosition: {x: -5.075, y: -3.034, z: 0}
   m_LocalScale: {x: 0.23732485, y: 0.22028725, z: 0.22865729}
   m_Children:
   - {fileID: 1042620740}
@@ -9433,6 +9434,25 @@ MonoBehaviour:
   speed: 2
   jumpVelocity: 6
   score: {fileID: 931114992}
+--- !u!95 &1540647343
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540647337}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 803ccf6e746579c41be16d1cd0c88b8b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1632209403
 GameObject:
   m_ObjectHideFlags: 0
@@ -9711,7 +9731,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847604429}
   m_LocalRotation: {x: 0.026167428, y: -0.009295586, z: 0.00024333988, w: 0.99961436}
-  m_LocalPosition: {x: -4.889, y: -2.811, z: -10}
+  m_LocalPosition: {x: -4.889, y: -2.51, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1275013652}
