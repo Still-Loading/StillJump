@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (IsGrounded() && (Input.GetAxis("Jump") > 0 || Input.GetAxis("Vertical") > 0))
         {
             m_Rigidbody2D.velocity = Vector2.up * jumpVelocity;
